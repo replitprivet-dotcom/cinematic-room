@@ -1,0 +1,6 @@
+{
+  "name": "Cinematic 3D Room",
+  "description": "An interactive 3D cinematic home theater room experience with first-person navigation, working TV screen, lighting modes, and sofa seating.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
