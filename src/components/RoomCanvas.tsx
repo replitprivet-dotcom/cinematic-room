@@ -554,7 +554,7 @@ export const RoomCanvas: React.FC<RoomCanvasProps> = ({
       if (isSitting) {
         positionRef.current.lerp(SITTING_POS, delta * 3.5);
         // Look towards TV center
-        yawRef.current = THREE.MathUtils.lerp(yawRef.current, Math.PI, delta * 3.5);
+        yawRef.current = THREE.MathUtils.lerp(yawRef.current, 0, delta * 3.5);
         pitchRef.current = THREE.MathUtils.lerp(pitchRef.current, 0.05, delta * 3.5);
       } else {
         // Player Movement in First-Person
@@ -574,8 +574,8 @@ export const RoomCanvas: React.FC<RoomCanvasProps> = ({
 
         const moveSpeed = 3.2;
         if (forwardInput !== 0 || sideInput !== 0) {
-          const forward = new THREE.Vector3(Math.sin(yawRef.current), 0, -Math.cos(yawRef.current));
-          const right = new THREE.Vector3(Math.cos(yawRef.current), 0, Math.sin(yawRef.current));
+          const forward = new THREE.Vector3(-Math.sin(yawRef.current), 0, -Math.cos(yawRef.current));
+          const right = new THREE.Vector3(Math.cos(yawRef.current), 0, -Math.sin(yawRef.current));
           const moveDir = new THREE.Vector3()
             .addScaledVector(forward, forwardInput)
             .addScaledVector(right, sideInput);
